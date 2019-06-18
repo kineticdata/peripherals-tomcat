@@ -1,0 +1,18 @@
+== Tomcat Web Application Reload
+Reloads a web application running on a Tomcat web server.
+
+This handler requires a user defined in the tomcat-users.xml file that is
+a member of the 'manager-script' role.
+
+This handler requires the Tomcat server has a user (conf/tomcat-users.xml)
+configured with the manager-script role because it accesses the /manager/text/...
+routes which require this.
+
+Assuming all the parameters are configured, this handler can still fail on
+the following known conditions:
+  1 - User credentials are incorrect
+  2 - User credentials do not have the manager-script role (conf/tomcat-users.xml)
+
+If the web application context is entered incorrectly, the Tomcat manager
+application will not report an error.  Your web application will obviously
+not be reloaded and there won't be any warning.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="tomcat_web_application_reload" name="Tomcat Web Application Reload" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>
+        Reloads a web application running on the Tomcat web server.
+    </description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="web_application_context" label="Context of the web application to reload" required="true"
+            tooltip="Web Application Context - /my-application"/>
+        <parameter id="web_server_address" label="Address of the webserver (and port if used)" required="true"
+            tooltip="Web Server Address - http://localhost:8080"/>
+        <parameter id="manager_username" label="Manager web application Username" required="true"
+            tooltip="Username for Manager Web Application (must have the manager-script role)"/>
+        <parameter id="manager_password" label="Manager web application Password" required="true"
+            tooltip="Password for Manager Web Application"/>
+    </parameters>
+    <handler name="tomcat_web_application_reload" version="1">
+        <parameters>
+            <parameter name="web_application_context">&lt;%= @parameters['web_application_context'] %&gt;</parameter>
+            <parameter name="web_server_address">&lt;%= @parameters['web_server_address'] %&gt;</parameter>
+            <parameter name="manager_username">&lt;%= @parameters['manager_username'] %&gt;</parameter>
+            <parameter name="manager_password">&lt;%= @parameters['manager_password'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml"/>
+</taskDefinition>
