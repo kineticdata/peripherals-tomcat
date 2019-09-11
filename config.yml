@@ -1,2 +1,8 @@
 ---
 repo-name: peripherals-tomcat
+categories:
+  - devops
+display-name: Tomcat
+manufacturer: Apache
+product: Tomcat
+description: Apache Tomcat, often referred to as Tomcat Server, is an open-source Java Servlet Container developed by the Apache Software Foundation (ASF).
